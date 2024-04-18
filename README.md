@@ -13,3 +13,7 @@ Otras imágenes:
 - https://pixabay.com/es/illustrations/negocio-arquitectura-3033199/
 - https://pixabay.com/es/illustrations/las-personas-de-edad-jubilados-1553348/
 - https://pixabay.com/es/illustrations/geom%C3%A9trico-dise%C3%B1o-computadora-1732847/
+
+Se ha añadido dos soluciones:
+- index.htm: solución no responsiva
+- index_responsivo.htm: solución responsiva usando flex
