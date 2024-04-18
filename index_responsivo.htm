@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abogados Olmedo</title>
+    <style>
+      @font-face {
+        font-family: campana;
+        src: url(fuentes/CampanaScript_PERSONAL_USE_ONLY.otf);
+      }
+      @font-face {
+        font-family: archivo;
+        src: url(fuentes/Archivo-VariableFont_wdth\wght.ttf);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        font-size: 100%;
+      }
+      /* Limitamos el ancho para pantallas grandes */
+      header,
+      main,
+      footer {
+        max-width: 1200px;
+      }
+
+      header {
+        background-color: black;
+         /* Lo centramos horizontalmente, recordando que solo funciona si hemos
+         establecido un width menor a 100% */
+        margin: auto;
+        margin-bottom: 20px;
+      }
+
+      header h1 {
+        font-family: campana;
+        font-size: 4rem;
+        text-align: center;
+        color: white;
+        letter-spacing: 1.3rem; /* Espacio entre letras */
+        font-weight: 100; /* Quitamos la negrita que tiene la propia letra por defecto */
+      }
+      main {
+        /* Lo centramos horizontalmente */
+        width: 80%;
+        margin: auto;
+      }
+
+    .abogados {
+        /* COmo vamos a colocar el texto dentro de la imagen */
+        position: relative;
+    }
+    .abogados img {
+        /* Casi siempre que vamos a hcaer la página responsiva, convendrá poner un 
+        max-width a la imagen en porcentajes para que no se salga de su contenedor */
+        max-width: 100%;
+    }
+    .abogados h2 {
+        /* Con clamp podemos poner un valor mínimo, el deseado y el máximo.
+        En este caso usamos vw para el texto que se refiere al ancho del viewport (ventana),
+        con lo que se agranda o empequeñece según el mismo. Hemos puesto un máximo pues
+        en monitores 2k, 4k  o similares, se vería muy grande, Otra opción
+        sería ir cambiando el fontsize con media querys */
+        font-size: clamp(1rem, 5vw, 6rem);
+        background-color: rgba(0, 0, 0, 0.4);
+        color: white;
+        /* Para mover el h2 lo mejor es usar posicionamiento absoluto, ya que le relativo
+        dejaría su espacio sin ocupar */
+        position: absolute;
+        /* Lo colocamos un 20% más abajo de la parte superior de su contenedor */
+        top:20%;
+        width: 55%;
+        padding: 2rem;
+    }
+      section {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .publicaciones h2, .compromiso h2 {
+        font-weight: normal;
+        font-size: 1.6rem;
+        margin: 1rem auto;
+        padding: 10px;
+        color: white;
+        background: black;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(187, 189, 189, 0.38) 100%
+        );
+      }
+      .compromiso p {
+        font-size: 1.1rem;
+        margin-left: 40px;
+        text-align: justify;
+      }
+      .destacadas {
+        /* Vamos a usar flex para colocar las opiniones */
+        display: flex;
+        /* Margen entre las opiniones */
+        gap: 20px;
+        /* Elegimos la alienación horizontal que más nos guste */
+        justify-content: space-evenly;
+        /* Si una opinión no cabe, que la pase a la siguiente fila */
+        flex-wrap: wrap;
+      }
+      .destacada {
+        /* Dos valores probando más o menos */
+        width: 30%;
+        min-width: 300px; 
+        font-family: 'Times New Roman', Times, serif;
+        padding: 80px 20px 20px;
+        /* Que la imagen de fondo ocupe todo el espacio posible del contenedor 
+        sin deformarse, con lo que pueden quedar espacios vacios */
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: rgb(5, 5, 77);
+        /* No queremos que se sume el padding y borde a neustros anchos y altos */
+        box-sizing: border-box;
+        /* Como cada caja tiene un alto diferente y las queremos todas debajo, podemos
+        añadir otro flex en cada apartado y usar align-items: end. Si no ponemos align-items
+        las cajas tendrán todas el mismo alto, que puede ser algo que también queramos */
+        display: flex;
+        align-items: end;
+      }
+      .destacada div {
+        background-color: white;
+        box-shadow: 2px 2px 2px black;
+        padding: 20px;
+        /* No queremos que se sume el padding y borde a neustros anchos y altos */
+        box-sizing: border-box;
+      }
+      .destacada p {
+        margin: 1rem auto;
+      }
+      .destacada a {
+        color:rgb(3, 3, 82);
+        text-decoration: underline;
+      }
+      .destacada:first-child {
+        background-image: url(imagenes/tendencias.jpg);
+      }
+      .destacada:nth-child(2) {
+        background-image: url(imagenes/pensiones.jpg);
+
+      }
+      .destacada:last-child {
+        background-image: url(imagenes/futuro.jpg);
+      }
+      .opiniones {
+        /* Usamos, igual que antes, un flex para las opiniones */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .opinion {
+        box-shadow: 0 0 10px 2px #00000061;
+        text-align: center;
+        background: linear-gradient(
+          to right,
+          rgba(167, 217, 240, 1) 0%,
+          rgba(0, 145, 202, 1) 100%
+        );
+        border-radius: 20px;
+        padding: 1rem;
+        margin-top: 70px;
+        box-sizing: border-box;
+        /* No queremos que se sume el padding y borde a neustros anchos y altos */
+        /* Establecemos un ancho mínimo, deseado y máximo. También podríamos usar
+        min-width, width y max-width */
+        width: clamp(250px, 70%, 330px);
+      }
+      .opinion img {
+        width: clamp(100px, 70%, 150px);
+        /* Ponemos la imagen de forma circular. Esto funciona proque la imagen es más
+        o menos cuadrado; de no serlo podría ser una elipse */
+        border-radius: 100%;
+        box-shadow: 0 0 10px 2px #00000061;
+        /* La subimos un poco hacia fuera de su contenedor */
+        margin-top: -50px;
+      }
+      .opinion p {
+        margin: 1rem;
+      }
+      /* Es el tercer hijo pues la imagen es el primero. También podríamos haber usado
+      p:last-child { */
+      .opinion p:nth-child(3) {
+        font-style: italic;
+        text-shadow: 1px 1px 1px rgb(206, 204, 204);
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+
+      footer {
+        text-align: center;
+        font-style: italic;
+        border-top: 2px solid black;
+        /* Le damos un width para que el brode superior ocupe menos */
+        width: 40%;
+        /* Lo centramos */
+        margin: auto;
+        margin-top: 20px;
+      }
+      footer p {
+        margin: 10px;
+      }
+      /* Ahora definimos diferentes medias para cambiar propiedades según tamaños.
+      Para decidir los width hemos ido haciendo pruebas, pudiéndose usar otros y
+      hacer otros cambios para daptar mejor el contenido */
+      @media all and (max-width: 600px) {
+        header h1 {
+            /* Ponemos la letra y su espaciado un poco más pequeña para que no ocupe
+            dos líneas o, si las ocupa, sea menos alto el header */
+          font-size: 2.5rem;
+          letter-spacing: normal;
+        }
+        /* Cambiamos los tamaños máximo de las opiniones */
+        .opinion {
+            width: clamp(250px, 90%, 330px);
+        }
+      }
+
+      @media all and (max-width: 400px) {
+        /* En ventanas pequeñas el footer sería demasido pequeño con el 40% que le
+        dimos anteriormenet */
+        footer {
+          width: 70%;
+        }
+        /* Nos interesa que el main sea un poco más grande */
+        main {
+          width: 90%;
+        }
+        /* Y quitar el margen izquierdo del párrafo */
+        .compromiso p {
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>Abogados Olmedo</h1></header>
+    <main>
+    <section class="abogados">
+        <img src="imagenes/abogados.jpg" alt="nuestro equipo de abogados">
+        <h2>Asesoramos ahora pero pensando en el futuro</h2>
+    </section>
+      <section class="compromiso">
+        <h2>Nuestro compromiso</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto non
+          velit recusandae labore, expedita architecto! Sed nisi, nesciunt
+          veniam labore nihil ipsum sit minus. Magnam quibusdam modi, asperiores
+          facere soluta atque, harum provident id repellendus pariatur vitae
+          laborum ut nobis illo quasi vero minus culpa maiores dolor laudantium
+          repellat veniam voluptas! Minima recusandae consectetur doloremque
+          dolorum minus deserunt, atque aperiam neque rerum placeat temporibus
+          eos cum numquam, ab obcaecati accusantium non deleniti velit quae!
+          Voluptas, sint veritatis perspiciatis iure possimus harum, ratione
+          explicabo qui ullam amet, iste odio sequi. Qui porro esse quis aliquid
+          provident ullam sed quae accusamus facilis.
+        </p>
+      </section>
+      <section class="publicaciones">
+        <h2>Publicaciones destacadas</h2>
+        <div class="destacadas">
+          <div class="destacada">
+            <div> <!-- Necesitamos este div para ponerle fondo blanco y reposicionarlo -->
+              <h3>Estudio de Tendencias Retributivas 2024</h3>
+              <p>
+                Análisis de los elementos clave que configurarán el panorama
+                retributivo en 2024.
+              </p>
+              <a href="">Saber más</a>
+            </div>
+          </div>
+          <div class="destacada">
+            <div>
+              <h3>Situación de las pensiones en España. Edición 2023</h3>
+              <p>
+                ¿Cómo están impactando los cambios normativos en las políticas
+                retributivas de las empresas?
+              </p>
+              <a href="">Saber más</a>
+            </div>
+          </div>
+          <div class="destacada">
+            <div>
+              <h3>El futuro de la función legal basada en criterios ESG</h3>
+              <p>El futuro de la función legal.</p>
+              <a href="">Saber más</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="opiniones">
+        <div class="opinion">
+            <img src="imagenes/rostro 1.jpg" alt="laura somiedo">
+            <p>Laura Somiedo</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti enim optio commodi et necessitatibus amet cum quas quia fuga iusto.</p>
+        </div>
+        <div class="opinion">
+            <img src="imagenes/rostro 2.jpg" alt="Ernesto Flores">
+            <p>Ernesto Flores</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti enim optio commodi et necessitatibus amet cum quas quia fuga iusto.</p>
+        </div>
+        <div class="opinion">
+            <img src="imagenes/rostro 3.jpg" alt="Steve Sanders">
+            <p>Steve Sanders</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti enim optio commodi et necessitatibus amet cum quas quia fuga iusto.</p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <address>
+        <p>C/ Sagundo 25, 1 D</p>
+        <p>36453 - Madrid</p>
+      </address>
+    </footer>
+  </body>
+</html>
