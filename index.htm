@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- 
+        Rostros: https://www.freepik.es/foto-gratis/diseno-collage-personas_12976943.htm 
+        Tipo de letra del título: https://www.dafont.com/es/campana-script.font
+        Tipo de letra del compromiso: https://fonts.google.com/specimen/Archivo
+        Imagen de abogados: https://pixabay.com/es/photos/derecho-promoci%C3%B3n-lex-abogado-jura-4703925/
+        Otras:
+        https://pixabay.com/es/illustrations/negocio-arquitectura-3033199/
+        https://pixabay.com/es/illustrations/las-personas-de-edad-jubilados-1553348/
+        https://pixabay.com/es/illustrations/geom%C3%A9trico-dise%C3%B1o-computadora-1732847/
+
+    -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abogados Olmedo</title>
+    <style>
+      @font-face {
+        font-family: campana;
+        src: url(fuentes/CampanaScript_PERSONAL_USE_ONLY.otf);
+      }
+      @font-face {
+        font-family: archivo;
+        src: url("fuentes/Archivo-VariableFont_wdth\,wght.ttf");
+      }
+      body {
+        margin: 0;
+      }
+      header h1 {
+        font-family: campana;
+        font-size: 6em;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+        color: white;
+        text-align: center;
+        background-color: rgb(40, 40, 40);
+      }
+      #presentacion {
+        width: 80%;
+        margin: 1em auto;
+        background-image: url(imagenes/abogados.jpg);
+        background-size: 100%;
+        height: 700px;
+      }
+      #presentacion h2 {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 0.5em;
+        font-size: 5em;
+        color: white;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        display: inline-block;
+        max-width: 50%;
+      }
+      #compromiso p {
+        font-family: archivo;
+        font-size: 1.2em;
+        padding-left: 2em;
+        text-align: justify;
+        color: rgb(103, 103, 103);
+      }
+      #compromiso,
+      #opiniones,
+      #publicaciones {
+        margin: auto 10%;
+      }
+      #opiniones {
+        text-align: center;
+      }
+      #compromiso h2,
+      #opiniones h2,
+      #publicaciones h2 {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: normal;
+        text-align: left;
+        padding: 0.3em 1em;
+        color: white;
+        background: black;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(187, 189, 189, 0.38) 100%
+        );
+      }
+      .opinion {
+        box-shadow: 0 0 10px 2px #00000061;
+        text-align: center;
+        width: 30%;
+        background: linear-gradient(
+          to right,
+          rgba(167, 217, 240, 1) 0%,
+          rgba(0, 145, 202, 1) 100%
+        );
+        border-radius: 20px;
+        padding: 1em;
+        margin: 50px;
+        display: inline-block;
+      }
+      .opinion img {
+        border-radius: 100%;
+        width: 150px;
+        margin-top: -50px;
+        box-shadow: 0 0 10px 2px #00000061;
+      }
+      .opinion p:first-of-type {
+        font-size: 1.3em;
+      }
+      .opinion p:last-child {
+        font-size: 1.3em;
+        color: rgb(3, 3, 3);
+        font-style: italic;
+        text-shadow: 1px 1px 1px rgb(206, 204, 204);
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      footer {
+        width: 30%;
+        margin: auto;
+        text-align: center;
+        font-size: 0.9em;
+        border-top: 2px solid black;
+      }
+      #publicaciones article {
+        display: inline-block;
+        width: 30%;
+        vertical-align: top;
+        height: 300px;
+        position: relative;
+        margin: 1em;
+        background-size: 100%;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-color: rgb(1, 23, 79);
+      }
+      #publicaciones article div {
+        background-color: white;
+        padding: 1em;
+        position: absolute;
+        bottom: 0;
+        margin: 1em;
+        box-shadow: 1px 1px 1px black;
+      }
+      #publicaciones article:first-of-type {
+        background-image: url(imagenes/tendencias.jpg);
+      }
+      #publicaciones article:nth-of-type(2) {
+        background-image: url(imagenes/pensiones.jpg);
+      }
+      #publicaciones article:nth-of-type(3) {
+        background-image: url(imagenes/futuro.jpg);
+      }
+      #publicaciones a {
+        color:rgb(3, 55, 107);
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 0.8em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Abogados Olmedo</h1>
+    </header>
+    <main>
+      <section id="presentacion">
+        <h2>Asesoramos ahora pero pensando en el futuro</h2>
+      </section>
+      <section id="compromiso">
+        <h2>Nuestro compromiso</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto non
+          velit recusandae labore, expedita architecto! Sed nisi, nesciunt
+          veniam labore nihil ipsum sit minus. Magnam quibusdam modi, asperiores
+          facere soluta atque, harum provident id repellendus pariatur vitae
+          laborum ut nobis illo quasi vero minus culpa maiores dolor laudantium
+          repellat veniam voluptas! Minima recusandae consectetur doloremque
+          dolorum minus deserunt, atque aperiam neque rerum placeat temporibus
+          eos cum numquam, ab obcaecati accusantium non deleniti velit quae!
+          Voluptas, sint veritatis perspiciatis iure possimus harum, ratione
+          explicabo qui ullam amet, iste odio sequi. Qui porro esse quis aliquid
+          provident ullam sed quae accusamus facilis.
+        </p>
+      </section>
+      <section id="publicaciones">
+        <h2>Publicaciones destacadas</h2>
+        <article>
+          <div>
+            <h3>Estudio de Tendencias Retributivas 2024</h3>
+            <p>
+              Análisis de los elementos clave que configurarán el panorama
+              retributivo en 2024.
+            </p>
+            <p><a href="">Saber más</a></p>
+          </div>
+        </article>
+        <article>
+          <div>
+            <h3>Situación de las pensiones en España. Edición 2023</h3>
+            <p>
+              ¿Cómo están impactando los cambios normativos en las políticas
+              retributivas de las empresas?
+            </p>
+            <p><a href="">Saber más</a></p>
+          </div>
+        </article>
+        <article>
+          <div>
+            <h3>El futuro de la función legal basada en criterios ESG</h3>
+            <p>El futuro de la función legal.</p>
+            <p><a href="">Saber más</a></p>
+          </div>
+        </article>
+      </section>
+      <section id="opiniones">
+        <h2>Lo que opinan nuestros clientes</h2>
+        <div class="opinion">
+          <img src="imagenes/rostro 1.jpg" alt="" />
+          <p>Laura Somiedo</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti
+            enim optio commodi et necessitatibus amet cum quas quia fuga iusto.
+          </p>
+        </div>
+        <div class="opinion">
+          <img src="imagenes/rostro 2.jpg" alt="" />
+          <p>Ernesto Flores</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti
+            enim optio commodi et necessitatibus amet cum quas quia fuga iusto.
+          </p>
+        </div>
+        <div class="opinion">
+          <img src="imagenes/rostro 3.jpg" alt="" />
+          <p>Steve Sanders</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti
+            enim optio commodi et necessitatibus amet cum quas quia fuga iusto.
+          </p>
+        </div>
+        <div class="opinion">
+          <img src="imagenes/rostro 5.jpg" alt="" />
+          <p>Luci Shin</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti
+            enim optio commodi et necessitatibus amet cum quas quia fuga iusto.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <address>
+        <p>C/ Sagundo 25, 1 D</p>
+        <p>36453 - Madrid</p>
+      </address>
+    </footer>
+  </body>
+</html>
